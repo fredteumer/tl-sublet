@@ -8,6 +8,10 @@ function Listing() {
 	//a unique id is attached to each listing, this is private
 	var id;
 	
+	//this variable says whether this has been filled and will remove this from the list
+	//if a specific sublet is 'filled'
+	var filled;
+	
 	this.lister;
 	this.address;
 	
@@ -20,6 +24,10 @@ function Listing() {
 	
 	//public function used to view a listing
 	this.view = function() {}
+	
+	this.append = function() {}
+	
+	this
 	
 }
 

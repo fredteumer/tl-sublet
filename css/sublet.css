@@ -1,3 +1,7 @@
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -9,6 +13,14 @@ html, body {
 	margin: 0px;
 	height: 100%;
 	overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
 }
 
 header {
@@ -26,7 +38,7 @@ header a {
     color: white;
 }
 
-header a:active {hidden
+header a:active {
     color: #3c2b21 !important;
 }
 
@@ -35,67 +47,49 @@ header span {
     position: relative;
 }
 
-.categoryButton {
-	padding-top: 1em;
-	background-color: #f4f3ea;
-	display: block;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom: .8em;
-	height: 2em;
-	text-align: center;
-	font-weight: bold;
-	color: #3c2b21;
-	font-size: 1.2em;
-	cursor: pointer;
-}
-
-.categoryButtonLight {
-	padding-top: 8px;
-	background-color: #ffffff;
-	display: block;
-	margin-bottom: .3em;
-	height: 1.5em;
-	text-align: center;
-	color: #3c2b21;
-	font-size: 1.2em;
-}
-
-.categoryButtonDark {
-	padding-top: 8px;
-	background-color: #f4f3ea;
-	display: block;
-	margin-top: 0px;
-	height: 1.5em;
-	text-align: center;
-	color: #3c2b21;
-	font-size: 1.2em;
-}
-
 #content {
     min-height: inherit !important;
-    margin: 50px 10px;
+    margin: 0px 10px;
     padding: 0;
 }
 
-.contentBackground {
-	margin: .3em;
-	background-color: #ffffff;
-	height: auto;
-	padding: .8em;
-	box-shadow: 3px 3px #EEE;
-}
-
-::-webkit-scrollbar {
-	display: none;
-}
-
 .column {
-    padding: 5px 5px;
-    background-color: #f4f3ea;
+    padding: 10px 10px;
+    background-color: #ffffff;
     margin: 0px 10px 20px 10px;
-    box-shadow: 3px 3px #EEE;
     overflow-y: scroll;
+}
+
+.boxTitle {
+	background-color: #f4f3ea;
+	box-shadow: 2px 2px #EEE;
+	padding-left: 10px;
+	margin-bottom: .4em;
+}
+
+#linkGrid {
+    padding-left: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.contentBox {
+    color: #3c2b21;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.contentBox .showMore {
+    font-style: italic;
+    color: #AAA;
+    list-style: none;
+    margin-left: 0;
+    text-indent: -1.3em;
+}
+
+.contentBox .showMore:before {
+    content: "+ ";
+    padding-right: .3em;
 }
 
 .fill {
@@ -106,12 +100,6 @@ header span {
     font-size: 1.2em;
     font-weight: bolder;
     text-transform: uppercase;
-}
-
-.contentBox {
-    background-color: #f4f3ea;
-    color: #3c2b21;
-    margin-bottom: 10px;
 }
 
 .title {
@@ -125,18 +113,33 @@ header span {
 	margin-top: 40px;
 }
 
-#logo {
+#tllogo {
     display: inline;
-    right: 20%;
+    right: 25%;
     position: absolute;
 }
 
-#logo img{
+#tllogo img{
     width: 180px;
     border-style: solid;
     border-width: 5px;
     border-color: #f4f3ea;
-    box-shadow: 3px 3px #CCC;
+    /*box-shadow: 3px 3px #CCC;*/
+}
+
+#sublogo {
+	padding-top: 45px;
+}
+
+#sublogo img{
+	display: block;
+	width: 50%;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #000000;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
 }
 
 #tlnav {
@@ -145,7 +148,7 @@ header span {
     margin: 0 !important;
     position: absolute;
     left: 0%;
-    top: 30%;
+    top: 35%;
 }
 
 #tlnav li {
@@ -153,77 +156,124 @@ header span {
     margin-right: 20px;
 }
 
-/* begin my code */
-
-.nav-header{
-	text-align: center;
-	color: white;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	font-size: inherit;
+#smallMenu {
+    display: block;
+    position: absolute;
+    right: 20%;
+    top: 35%;
 }
 
-.app-unit{
-	text-align: center;
-	cursor: pointer;
-	margin-bottom: 80px;
+.listingList li {
+    height: 1.5em;
 }
 
-.app-img{
-	margin-left: 20px;
-	margin-right: auto;
+.eventsList {
+    margin: 0 0 20px 0;
 }
 
-
-
-#leftarrow{
-	font: inherit;
-	font-family: Helvetica;
-	font-weight: bolder;
-	text-align: center;
-	cursor: pointer;
-	top: 50%;
-	/*margin-top: 600%;*/
+.eventsList li {
+    list-style: none;
 }
 
-#rightarrow{
-	font: inherit;
-	font-family: Helvetica;
-	font-weight: bolder;
-	text-align: center;
-	cursor: pointer;
-	/*margin-top: 600%;*/
+.eventContainer {
+    height: 44px;
+    display: block;
+    margin-bottom: 0px;
 }
 
-h6{
-	font-family: Helvetica;
-	font-weight: bolder;
-	text-align: center;
-	text-size: 1.2em;
+.eventDate {
+    display: inline;
+    float: left;
+    width: 18%;
+    text-align: center;
+    font-weight: 700;
 }
 
-.author{
-	font-family: Helvetica;
-	font-weight: lighter;
-	font-style: italic;
-	text-align: center;
-	font-size: .85em;
-	color: rgba(0,0,0,0.57);
+.eventText {
+    display: block;
+    float: right;
+    height: inherit !important;
+    width: 80%;
+    overflow: hidden;
+    font-weight: 100;
 }
 
-.arrow{
-	display: block;
-	position: relative;
-	top: 50%;
+.everyOther {
+    background-color: #f4f3ea;
 }
 
-/* end my code */
+#newsimg {
+    margin-top: -4px;
+    margin-bottom: 1em;
+}
+
+.newsTitle {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.newsByline {
+    font-weight: 200;
+    color: gray;
+    font-style: italic;
+    margin: .3em 0;
+}
+
+.newsMore {
+    color: gray;
+    font-style: italic;
+}
+
+#weatherImgDiv {
+    height: 5em;
+    display: inline;
+    float: left;
+    width: 40%;
+}
+
+#weatherImgDiv img {
+    position: relative;
+    left: 20%;
+    top: 10%;
+}
+
+#weatherInfo {
+    height: 5em;
+}
+
+#weatherInfo p {
+    text-align: center;
+    position: relative;
+    font-size: larger;
+    font-weight: 300;
+    top: 20%;
+}
+
+.crop { height: 200px; overflow: hidden; }
+.crop img { height: auto; }
+
+/*
+#listingsColumn {
+	background-color: #10ff1c;
+}
+
+#eventsColumn {
+	background-color: #00ffe7;
+}*/
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
 
 @media (min-width: 1200px) {
 
 }
 
-@media (min-width: 768px) and (max-width: 979px) { /* tablets */
+@media (min-width: 768px) and (max-width: 979px) {
 
 }
 
@@ -245,16 +295,15 @@ h6{
     }
     
     .contentBox {
-        background-color: #f4f3ea;
         color: #3c2b21;
         margin-bottom: 10px;
     }
 
     .column {
         background-color: #ffffff;
-        margin: 50px 10px 20px 10px;
+        margin: 0px 10px 20px 10px;
         box-shadow: 3px 3px #CCC;
-        text-align: center;
+        height: auto;
     }
     
     #logo {
@@ -266,7 +315,7 @@ h6{
     }
     
     #tlnavBottom li {
-        /*display: block;*/
+        display: block;
         height: 3em;
         line-height: 3em;
         list-style: none;
@@ -283,25 +332,6 @@ h6{
     #tlnavBottom li a {
         text-decoration: none;
     }
-    
-    .app-unit{
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		/*padding-top:50px;
-		padding-bottom:50px;*/
-		text-align: center;
-	}
-	
-	.app-img{
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	#sidebarcol{
-		display: hidden;
-	}
-	
 }
 
 @media (max-width: 480px) { 
@@ -316,4 +346,3 @@ h6{
 @media (min-width: 980px) {
 
 }
-
