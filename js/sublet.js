@@ -31,3 +31,48 @@ function Listing() {
 	
 }
 
+function displayList(id, aList) {
+	$(id).html("");
+	for (i in aList){
+			var it = "<p class=\"categoryButton\" onclick=\"0\">" + aList[i] + "</p>";
+   			$(id).append(it);
+	}
+}
+
+function init() {
+	 //sidebar
+    var side_elems = ["Add Listing", "Remove Listing"];
+    displayList("#sidebar", side_elems);
+	
+}
+
+//existing js code
+//dont touch
+function evenOutChildren(divID) {
+    var hei = 0;
+    $(divID).children().each(function (x) {
+        //$(this).attr("top","60%");
+    });
+}
+
+function sizing() {
+    var h = $(window).height() - 2*$("header").height();
+    var w = $(window).width();
+    var mar = parseInt($("#content").css("margin-top"),10);
+    if(w > 767){ //desktop
+    	$("#sidebarcol").height((h-(mar/2))+"px");
+    	$("#leftpage").height((h-mar)+"px");
+    	$("#rightpage").height((h-mar)+"px");
+    	//$("#leftarrow").offset().top = ($("#leftpage").offset.top+$("#leftpage").height()/2);
+    }
+    else{ //mobile
+    	$("#sidebarcol").height(6*parseInt($(".categoryButton").height(),10));
+    	$("#leftpage").height("0px");
+    	$("#rightpage").height("0px");
+    }
+
+}
+
+$(window).load(init);
+$(document).ready(sizing);
+$(window).resize(sizing);
