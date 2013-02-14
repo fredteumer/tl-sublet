@@ -19,8 +19,9 @@ function Listing() {
 	//images is an array of up to (5) images of the residence
 	this.images;
 	this.rent;
-	//contact holds a phone number, email address or other contact info
-	this.contact;
+	//contact information, must list email, phone is optional
+	this.email;
+	this.phone;
 	
 	//public function used to view a listing
 	this.view = function() {}
@@ -32,10 +33,11 @@ function Listing() {
 var allListings;
  
 function init() {
-	 //sidebar
-    //var sidebar = document.getElementById("sidebar");
-    var add = "<p class=\"button\" id=\"addButton\" onclick=\"openAddListing\">Add Listing</p>"
-    var rem = "<p class=\"button\" id=\"remButton\" onclick=\"openRemListing\">Remove Listing</p>"
+	
+	//sidebar
+    var add = "<p class=\"button\" id=\"addButton\" onclick=\"openPopup(this, \'add\')\">Add Listing</p>";
+    var rem = "<p class=\"button\" id=\"remButton\" \
+      onclick=\"openPopup(this, \'rem\')\">Remove Listing</p>";
     $('#sidebar').append(add);
     $('#sidebar').append(rem);
     
@@ -46,6 +48,24 @@ function init() {
     }
 	
 }
+
+function openPopup(item, type) {
+	if(type == 'add'){
+		$('#popupTitle').html("List Your Apartment");
+		$('#popup').modal();
+	} 
+	else if(type == 'rem'){
+		$('#popupTitle').html("Remove Your Listing");
+		$('#popup').modal();
+	} 
+	else if(type == 'view'){
+		$('#popupTitle').html($(item).html());
+		$('#popup').modal();
+	}
+}
+
+
+
 
 //existing js code
 //dont touch
