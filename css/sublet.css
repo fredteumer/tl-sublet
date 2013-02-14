@@ -29,17 +29,9 @@ header {
 	height: 50px;
 	font-family: Helvetica;
 	font-weight: bolder;
-	color: white;
-	background-color: #3c2b21;
+	color: black;
+	background-color: #000000; /*#3c2b21;*/
 	position: relative;
-}
-
-header a {
-    color: white;
-}
-
-header a:active {
-    color: #3c2b21 !important;
 }
 
 header span {
@@ -59,7 +51,7 @@ header span {
     margin: 0px 10px 20px 10px;
     overflow-y: scroll;
 }
-
+/*
 .boxTitle {
 	background-color: #f4f3ea;
 	box-shadow: 2px 2px #EEE;
@@ -112,6 +104,9 @@ header span {
 #currentColumn {
 	margin-top: 40px;
 }
+*/
+
+/* begin my code */
 
 #tllogo {
     display: inline;
@@ -128,7 +123,7 @@ header span {
 }
 
 #sublogo {
-	padding-top: 45px;
+
 }
 
 #sublogo img{
@@ -140,8 +135,33 @@ header span {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
+.button {
+	background-color: #000000;
+	display: block;
+	padding-top: .8em;
+	height: 2.3em;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.button:hover {
+	text-decoration: none;
+	background-color: #303030;
+	cursor:pointer;
+}
+
+.buttonTxt {
+	line-height: 2.3em;
+}
+
+/*end my code*/
+
+/*
 #tlnav {
     width: 446px !important;
     height: auto !important;
@@ -252,7 +272,7 @@ header span {
 .crop { height: 200px; overflow: hidden; }
 .crop img { height: auto; }
 
-/*
+
 #listingsColumn {
 	background-color: #10ff1c;
 }
@@ -286,7 +306,7 @@ header span {
 	   padding: 0px;
 	   margin: 0px;
 	   height: 100%;
-	   background-color: #f4f3ea;
+	   background-color: #FFFFFF;
     }
     
     #content {
@@ -302,11 +322,11 @@ header span {
     .column {
         background-color: #ffffff;
         margin: 0px 10px 20px 10px;
-        box-shadow: 3px 3px #CCC;
+        /*box-shadow: 3px 3px #CCC;*/
         height: auto;
     }
-    
-    #logo {
+    /*
+    #tllogo {
         left:10%;
     }
     
@@ -331,7 +351,7 @@ header span {
     
     #tlnavBottom li a {
         text-decoration: none;
-    }
+    }*/
 }
 
 @media (max-width: 480px) { 

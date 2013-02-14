@@ -3,7 +3,7 @@
 function Listing() {
 	
 	//private function to initialize a new Listing
-	var init = function() {}
+	var init = function(lister, address, description, images, rent, contact) {}
 	
 	//a unique id is attached to each listing, this is private
 	var id;
@@ -25,24 +25,25 @@ function Listing() {
 	//public function used to view a listing
 	this.view = function() {}
 	
-	this.append = function() {}
-	
-	this
+	this.list = function() {}
 	
 }
 
-function displayList(id, aList) {
-	$(id).html("");
-	for (i in aList){
-			var it = "<p class=\"categoryButton\" onclick=\"0\">" + aList[i] + "</p>";
-   			$(id).append(it);
-	}
-}
-
+var allListings;
+ 
 function init() {
 	 //sidebar
-    var side_elems = ["Add Listing", "Remove Listing"];
-    displayList("#sidebar", side_elems);
+    //var sidebar = document.getElementById("sidebar");
+    var add = "<p class=\"button\" id=\"addButton\" onclick=\"openAddListing\">Add Listing</p>"
+    var rem = "<p class=\"button\" id=\"remButton\" onclick=\"openRemListing\">Remove Listing</p>"
+    $('#sidebar').append(add);
+    $('#sidebar').append(rem);
+    
+   
+    
+    if(allListings == null){
+	    $('#listings').append("<p>There doesn't seem to be anything here...</p>");
+    }
 	
 }
 
