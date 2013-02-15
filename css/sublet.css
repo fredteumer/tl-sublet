@@ -1,3 +1,5 @@
+/*This code is (C)2013 Fred Teumer */
+
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -104,6 +106,34 @@ header span {
 .buttonTxt {
 	line-height: 2.3em;
 }
+
+.tiny {
+	font-style: italic;
+	font-size: 9px;
+}
+
+#fzip {
+	width: 3.0em;
+}
+
+#fdesc {
+	width: 25em;
+	height: 10em;
+}
+
+#fphone {
+	width: 6.0em;
+}
+
+#frent{
+	width: 2.5em;
+}
+
+#frem {
+	width: 4.5em;
+}
+
+
 
 /*end my code*/
 

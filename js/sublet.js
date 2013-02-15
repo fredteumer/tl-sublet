@@ -1,4 +1,5 @@
 //Sublet App for the New TuftsLife
+//This code is (C)2013 Fred Teumer
 
 function Listing() {
 	
@@ -12,8 +13,11 @@ function Listing() {
 	//if a specific sublet is 'filled'
 	var filled;
 	
+	//group of easy to use vars that hold address
 	this.lister;
-	this.address;
+	this.add_st;
+	this.add_city;
+	this.add_zip;
 	
 	this.description;
 	//images is an array of up to (5) images of the residence
@@ -52,10 +56,24 @@ function init() {
 function openPopup(item, type) {
 	if(type == 'add'){
 		$('#popupTitle').html("List Your Apartment");
+		$('#popupBody').html("<form class=\"iform\" id=\"addForm\" action=\"\"> \
+            Address: <input type=\"text\" maxlength=\"40\" name=\"address\" /><br /> \
+            City/Zip: <input type=\"text\" name=\"city\" maxlength=\"25\" /> \
+            <input type=\"text\" id=\"fzip\" name=\"zip\" maxlength=\"5\"/><br /> \
+            Description*: <input type=\"text\" id=\"fdesc\" name=\"desc\" maxlength=\"250\" /><br /> \
+            Rent: <input type=\"text\" id=\"frent\" name=\"rent\" maxlength=\"4\" /><br /> \
+            Name: <input type=\"text\" name=\"uname\" maxlength=\"40\" /><br /> \
+            Email: <input type=\"email\" name=\"email\" maxlength=\"40\" /><br /> \
+            Phone*: <input type=\"text\" id=\"fphone\" name=\"phone\" maxlength=\"10\" /> \
+        </form> \
+        <p class=\"tiny\">* = optional field.</p>");
 		$('#popup').modal();
 	} 
 	else if(type == 'rem'){
 		$('#popupTitle').html("Remove Your Listing");
+		$('#popupBody').html("<form class=\iform\" id=\"remForm\" action=\"\"> \
+			Secret Code: <input type=\"text\" size=\"7\" id=\"frem\" name=\"remove\" /> \
+			</form>");
 		$('#popup').modal();
 	} 
 	else if(type == 'view'){
