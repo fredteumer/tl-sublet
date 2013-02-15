@@ -27,6 +27,10 @@ function Listing() {
 	this.email;
 	this.phone;
 	
+	this.listdate;
+	this.startdate;
+	this.enddate;
+	
 	//public function used to view a listing
 	this.view = function() {}
 	
@@ -56,28 +60,48 @@ function init() {
 function openPopup(item, type) {
 	if(type == 'add'){
 		$('#popupTitle').html("List Your Apartment");
+		
 		$('#popupBody').html("<form class=\"iform\" id=\"addForm\" action=\"\"> \
             Address: <input type=\"text\" maxlength=\"40\" name=\"address\" /><br /> \
             City/Zip: <input type=\"text\" name=\"city\" maxlength=\"25\" /> \
             <input type=\"text\" id=\"fzip\" name=\"zip\" maxlength=\"5\"/><br /> \
-            Description*: <input type=\"text\" id=\"fdesc\" name=\"desc\" maxlength=\"250\" /><br /> \
-            Rent: <input type=\"text\" id=\"frent\" name=\"rent\" maxlength=\"4\" /><br /> \
+            Description: <textarea id=\"fdesc\" name=\"desc\" maxlength=\"250\" \
+            rows=\"3\" cols=\"40\"></textarea> \
+            Rent/Month: <input type=\"text\" id=\"frent\" name=\"rent\" maxlength=\"4\" /><br /> \
+            Start Date (MM/DD/YY): <input type=\"text\" class=\"ftwo\" name=\"startm\" maxlength=\"2\" /> \
+            / <input type=\"text\" class=\"ftwo\" name=\"startd\" maxlength=\"2\" /> \
+            / <input type=\"text\" class=\"ftwo\" name=\"starty\" maxlength=\"2\" /><br /> \
+            End Date (MM/DD/YY): <input type=\"text\" class=\"ftwo\" name=\"endm\" maxlength=\"2\" /> \
+            / <input type=\"text\" class=\"ftwo\" name=\"endd\" maxlength=\"2\" /> \
+            / <input type=\"text\" class=\"ftwo\" name=\"endy\" maxlength=\"2\" /><br /> \
             Name: <input type=\"text\" name=\"uname\" maxlength=\"40\" /><br /> \
             Email: <input type=\"email\" name=\"email\" maxlength=\"40\" /><br /> \
-            Phone*: <input type=\"text\" id=\"fphone\" name=\"phone\" maxlength=\"10\" /> \
-        </form> \
-        <p class=\"tiny\">* = optional field.</p>");
+            Phone: <input type=\"text\" id=\"fphone\" name=\"phone\" maxlength=\"10\" /><br /> \
+        </form>");
+        
+        $('#popupFoot').html("<button id=\"listButton\" class=\"btn btn-primary\" \
+        	onclick=\"createListing()\" data-dismiss=\"modal\" aria-hidden=\"true\">List</button>");
+        	
 		$('#popup').modal();
 	} 
 	else if(type == 'rem'){
 		$('#popupTitle').html("Remove Your Listing");
+		
 		$('#popupBody').html("<form class=\iform\" id=\"remForm\" action=\"\"> \
 			Secret Code: <input type=\"text\" size=\"7\" id=\"frem\" name=\"remove\" /> \
 			</form>");
+			
+		$('#popupFoot').html("<button id=\"remButton\" class=\"btn btn-primary\" \
+        	onclick=\"remListing()\" data-dismiss=\"modal\" aria-hidden=\"true\">Remove Listing</button>");
+        	
 		$('#popup').modal();
 	} 
 	else if(type == 'view'){
 		$('#popupTitle').html($(item).html());
+		
+		$('#popupFoot').html("<button id=\"closeButton\" class=\"btn btn-primary\" \
+        	data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>");
+        	
 		$('#popup').modal();
 	}
 }

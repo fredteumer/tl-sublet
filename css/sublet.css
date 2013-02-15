@@ -117,8 +117,8 @@ header span {
 }
 
 #fdesc {
-	width: 25em;
-	height: 10em;
+	/*width: 18em;
+	height: 5em;*/
 }
 
 #fphone {
@@ -131,6 +131,10 @@ header span {
 
 #frem {
 	width: 4.5em;
+}
+
+.ftwo {
+	width: 1.8em;
 }
 
 
