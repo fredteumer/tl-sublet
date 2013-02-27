@@ -141,7 +141,37 @@ header span {
 	width: 2.6em;
 }
 
+.listing{
+	border: 3px black solid;
+	border-radius: 5px;
+	padding: 2%;
+	margin-bottom: 7px;
+}
 
+.listing:hover {
+	border: 3px #4d71e9 solid;
+	cursor: pointer;
+}
+
+.listtitle{
+	display: inline;
+}
+
+.rentsmall{
+	display: inline;
+	text-align: right;
+	font-size: 10px;
+}
+
+.citysmall{
+	display: inline-block;
+	font-size: 12px;
+}
+
+.datesmall{
+	display: inline;
+	font-size: 10px;
+}
 
 /*end my code*/
 
