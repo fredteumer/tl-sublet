@@ -15,18 +15,25 @@ function init() {
    
     
     if(allListings == null){
+    
+    for(i=0; i<12; i++){
 	    
-	    $('#listings').prepend('<div class=\'listing\' onclick=\'openPopup(this, \'view\')\' \
-			id=\'LIST0\'</div>');
+	    $('#listings').prepend('<div class=\'listing\' onclick=\'openPopup(this, \"view\")\' \
+			id=\'LIST'+i+'\'</div>');
 	    	
-	   	$('#LIST0').html("<h3 class=\"listtitle\"> 29 Frederick Ave </h3>\
+	   	$('#LIST'+i).html("<h3 class=\"listtitle\"> 29 Frederick Ave </h3>\
 			<p class=\'rentsmall\'>$650\/mo</p> \
 			<p class=\'citysmall\'>Medford 02155</p> \
-			<p class=\'datesmall\'>6/1/2013-6/1/2014</p> \
+			<p class=\'datesmall\'>12/11/2013-12/11/2014</p> \
 			<p class=\'hidden\'>Fred T</p> \
 			<p class=\'hidden\'>bob@bob.bob</p> \
 			<p class=\'hidden\'>555.555.5555</p> \
-			<p class=\'hidden\'>Great apartment, a bit far off campus!</p> ");
+			<p class=\'hidden\'>Great apartment, a bit far off campus! fee fi foiandflkasdjfpadsjf\
+			;lksdfjasl;kdfjas;dlkfjasld;kfjas;dlfkjas;ldkjfasld;kfjsldkfjasld;kfjasd;lfkjasdl;fk \
+			jasdl;fkjasdlfkjasdl;fjkasdl;fkjasdflkjasdfa;</p> \
+			<p class=\'hidden\'>http://www.clker.com/cliparts/l/j/T/V/5/v/home-icon-md.png</p> \
+			<p class=\'hidden\'>02/26/2013</p>");
+	}
     }
 	
 }
@@ -73,7 +80,19 @@ function openPopup(item, type, more) {
 		$('#popup').modal();
 	} 
 	else if(type == 'view'){
-		$('#popupTitle').html($(item).html());
+		$('#popupTitle').html($(item).children().eq(0).html());
+		
+		$('#popupBody').html("\
+			<h3 class=\"rentlarge\">"+$(item).children().eq(1).html()+"</h3>\
+			<p class=\'datefull\'>"+$(item).children().eq(3).html()+"</p> \
+			<p class=\'cityreg\'>"+$(item).children().eq(2).html()+"</p> \
+			<p class=\'namereg\'>Contact: "+$(item).children().eq(4).html()+"</p> \
+			<p class=\'emailreg\'>"+$(item).children().eq(5).html()+"</p> \
+			<p class=\'phonereg\'>"+$(item).children().eq(6).html()+"</p> \
+			<p class=\'descreg\'>"+$(item).children().eq(7).html()+"</p> \
+			<a class=\'imlink\' href=\'"+$(item).children().eq(8).html()+"\'><img class=\'pic\' \
+			src=\'"+$(item).children().eq(8).html()+"\' alt=\'uploaded image\'/></a> \
+			");
 		
 		$('#popupFoot').html("<button id=\"closeButton\" class=\"btn btn-primary\" \
         	data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>");
@@ -123,13 +142,13 @@ function createListing(){
 	
 		$('#'+nextID).html("<h3 class=\"listtitle\"> "+st_add+" </h3>\
 			<p class=\'rentsmall\'>$"+rent+"\/mo</p> \
-			<br /> \
 			<p class=\'citysmall\'>"+city+" "+zip+"</p> \
 			<p class=\'datesmall\'>"+startdate+" - "+enddate+"</p> \
 			<p class=\'hidden\'>"+name+"</p> \
 			<p class=\'hidden\'>"+email+"</p> \
 			<p class=\'hidden\'>"+phone+"</p> \
-			<p class=\'hidden\'>"+desc+"</p> ");
+			<p class=\'hidden\'>"+desc+"</p> \
+			<p class=\'hidden\'>"+today+"</p> ");
 		
 		return 1;
 	}

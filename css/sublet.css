@@ -146,6 +146,8 @@ header span {
 	border-radius: 5px;
 	padding: 2%;
 	margin-bottom: 7px;
+	position: relative;
+	height: 75px;
 }
 
 .listing:hover {
@@ -154,23 +156,108 @@ header span {
 }
 
 .listtitle{
+	vertical-align: middle;
 	display: inline;
+	position: absolute;
 }
 
 .rentsmall{
+	position: absolute;
 	display: inline;
-	text-align: right;
-	font-size: 10px;
+	font-size: 16px;
+	bottom: 55%;
+	left: 75%;
 }
 
 .citysmall{
-	display: inline-block;
+	display:inline;
+	position: absolute;
 	font-size: 12px;
+	font-style: italic;
+	top: 70%;
 }
 
 .datesmall{
 	display: inline;
+	position: absolute;
 	font-size: 10px;
+	left: 75%;
+	bottom: 5%;
+	font-style: italic;
+}
+
+#popupBody{
+	position: relative;
+}
+
+.rentlarge{
+	font-size: 18px;
+	position: absolute;
+	display: inline;
+	left: 75%;
+	bottom: 80%;
+	width: 65%;
+}
+
+.datefull{
+	font-size: 10px;
+	font-style: italic;
+	position: absolute;
+	display: inline;
+	left: 75%;
+	top: 10%;
+}
+
+.descreg{
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	left:30%;
+	top:25%;
+}
+
+.cityreg{
+	display: inline;
+	position: absolute;
+	font-size: 14px;
+	font-weight: bold;
+	left: 30%;
+}
+
+.namereg{
+	display: block;
+	position: absolute;
+	top: 75%;
+	font-size: 12px;
+}
+
+.emailreg{
+	display: block;
+	position: absolute;
+	top: 75%;
+	font-size: 12px;
+	left: 40%;
+}
+
+.phonereg{
+	display: block;
+	position: absolute;
+	font-size: 12px;
+	top: 75%;
+	left: 85%;
+}
+
+.pic{
+	display: block;
+	width:100px;
+	height:100px;
+	top: 1%;
+	left: 1%;
+	padding-bottom: 100px;
+}
+
+.imlink{
+	cursor: pointer;
 }
 
 /*end my code*/
