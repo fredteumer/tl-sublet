@@ -1,8 +1,6 @@
 //Sublet App for the New TuftsLife
 //This code is (C)2013 Fred Teumer
 
-var allListings;
-
 function init() {
 	
 	//sidebar
@@ -14,27 +12,21 @@ function init() {
     
    
     
-    if(allListings == null){
-    
-    for(i=0; i<12; i++){
 	    
-	    $('#listings').prepend('<div class=\'listing\' onclick=\'openPopup(this, \"view\")\' \
-			id=\'LIST'+i+'\'</div>');
+	$('#listings').prepend('<div class=\'listing\' onclick=\'openPopup(this, \"view\")\' \
+		id=\'LIST0\'</div>');
 	    	
-	   	$('#LIST'+i).html("<h3 class=\"listtitle\"> 29 Frederick Ave </h3>\
-			<p class=\'rentsmall\'>$650\/mo</p> \
-			<p class=\'citysmall\'>Medford 02155</p> \
-			<p class=\'datesmall\'>12/11/2013-12/11/2014</p> \
-			<p class=\'hidden\'>Fred T</p> \
-			<p class=\'hidden\'>bob@bob.bob</p> \
-			<p class=\'hidden\'>555.555.5555</p> \
-			<p class=\'hidden\'>Great apartment, a bit far off campus! fee fi foiandflkasdjfpadsjf\
-			;lksdfjasl;kdfjas;dlkfjasld;kfjas;dlfkjas;ldkjfasld;kfjsldkfjasld;kfjasd;lfkjasdl;fk \
-			jasdl;fkjasdlfkjasdl;fjkasdl;fkjasdflkjasdfa;</p> \
-			<p class=\'hidden\'>http://www.clker.com/cliparts/l/j/T/V/5/v/home-icon-md.png</p> \
-			<p class=\'hidden\'>02/26/2013</p>");
-	}
-    }
+	$('#LIST0').html("<h3 class=\"listtitle\">100 Demo Lane</h3>\
+		<p class=\'rentsmall\'>FREE\/mo</p> \
+		<p class=\'citysmall\'>Medford 02155</p> \
+		<p class=\'datesmall\'>06/01/9999-06/01/0000</p> \
+		<p class=\'hidden\'>Demo Guy</p> \
+		<p class=\'hidden\'>demoguy@gmail.com</p> \
+		<p class=\'hidden\'>555.guy.demo</p> \
+		<p class=\'hidden\'>Welcome to the Sublet App! Be sure to include visuals by uploading \
+		an image of your apartment to a site like imgur! Happy Hunting!</p> \
+		<p class=\'hidden\'>http://www.clker.com/cliparts/l/j/T/V/5/v/home-icon-md.png</p> \
+		<p class=\'hidden\'>02/26/2013</p>");
 	
 }
 
@@ -58,7 +50,8 @@ function openPopup(item, type, more) {
             / <input type=\"text\" class=\"ffour\" name=\"endy\" maxlength=\"4\" /><br /> \
             Name*: <input type=\"text\" name=\"uname\" maxlength=\"40\" /><br /> \
             Email*: <input type=\"email\" name=\"email\" maxlength=\"40\" /><br /> \
-            Phone: <input type=\"text\" id=\"fphone\" name=\"phone\" maxlength=\"10\" /><br /> \
+            Phone: <input type=\"text\" id=\"fphone\" name=\"phone\" maxlength=\"10\" /> \
+            Image: <input type=\"text\" id=\"fimg\" name=\"img\" /> \
         </form>");
         
         $('#popupFoot').html("<button id=\"listButton\" class=\"btn btn-primary\" \
@@ -126,6 +119,7 @@ function createListing(){
 	var name = $('#addForm').find('input[name="uname"]').val();
 	var email = $('#addForm').find('input[name="email"]').val(); 
 	var phone = $('#addForm').find('input[name="phone"]').val();
+	var img = $('#addForm').find('input[name="img"]').val();
 	
 	var startdate = startm+'/'+startd+'/'+starty;
 	var enddate = endm+'/'+endd+'/'+endy;
@@ -148,7 +142,8 @@ function createListing(){
 			<p class=\'hidden\'>"+email+"</p> \
 			<p class=\'hidden\'>"+phone+"</p> \
 			<p class=\'hidden\'>"+desc+"</p> \
-			<p class=\'hidden\'>"+today+"</p> ");
+			<p class=\'hidden\'>"+today+"</p> \
+			<p class=\'hidden\'>"+img+"</p>");
 		
 		return 1;
 	}
