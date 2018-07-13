@@ -2,6 +2,7 @@
 //This code is (C)2013 Fred Teumer
 
 //testing new commit
+//testing new commit 2
 
 function init() {
 	
