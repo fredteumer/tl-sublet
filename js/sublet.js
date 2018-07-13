@@ -1,6 +1,8 @@
 //Sublet App for the New TuftsLife
 //This code is (C)2013 Fred Teumer
 
+//testing new commit
+
 function init() {
 	
 	//sidebar
